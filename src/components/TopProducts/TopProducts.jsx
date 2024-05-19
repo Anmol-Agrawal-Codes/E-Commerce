@@ -3,12 +3,14 @@ import Img1 from "../../assets/shirt/shirt.png";
 import Img2 from "../../assets/shirt/shirt2.png";
 import Img3 from "../../assets/shirt/shirt3.png";
 import { FaStar } from "react-icons/fa";
+import AddToCart from "../Cart/AddToCartButton";
 
 const ProductsData = [
   {
     id: 1,
     img: Img1,
     title: "Casual Wear",
+    rating: 5,
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
@@ -16,6 +18,7 @@ const ProductsData = [
     id: 2,
     img: Img2,
     title: "Printed shirt",
+    rating: 5,
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
@@ -23,6 +26,7 @@ const ProductsData = [
     id: 3,
     img: Img3,
     title: "Women shirt",
+    rating: 5,
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
@@ -69,15 +73,10 @@ const TopProducts = ({ handleOrderPopup }) => {
                   <FaStar className="text-yellow-500" />
                 </div>
                 <h1 className="text-xl font-bold">{data.title}</h1>
-                <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">
+                <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2 mb-2">
                   {data.description}
                 </p>
-                <button
-                  className="bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary"
-                  onClick={handleOrderPopup}
-                >
-                  Order Now
-                </button>
+                <AddToCart item={data} className={"m-auto mt-2"}/>
               </div>
             </div>
           ))}

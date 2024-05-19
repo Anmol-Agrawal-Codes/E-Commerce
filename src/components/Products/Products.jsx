@@ -4,6 +4,7 @@ import Img2 from "../../assets/women/women2.jpg";
 import Img3 from "../../assets/women/women3.jpg";
 import Img4 from "../../assets/women/women4.jpg";
 import { FaStar } from "react-icons/fa6";
+import AddToCart from "../Cart/AddToCartButton";
 
 const ProductsData = [
   {
@@ -48,7 +49,8 @@ const ProductsData = [
   },
 ];
 
-const Products = () => {
+const Products = ({handleOrderPopup}) => {
+
   return (
     <div className="mt-14 mb-12">
       <div className="container">
@@ -89,6 +91,7 @@ const Products = () => {
                     <span>{data.rating}</span>
                   </div>
                 </div>
+                <AddToCart item={data} />
               </div>
             ))}
           </div>
